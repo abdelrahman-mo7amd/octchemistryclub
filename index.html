@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>October Chemistry Club | STEM Egypt</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    
+    <link rel="stylesheet" href="src/css/base.css">
+    <link rel="stylesheet" href="src/css/nav.css">
+    <link rel="stylesheet" href="src/css/hero.css">
+    <link rel="stylesheet" href="src/css/sections.css">
+    <link rel="stylesheet" href="src/css/forms.css">
+    <link rel="stylesheet" href="src/css/responsive.css">
+
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics-compat.js"></script>
+</head>
+<body>
+    <!-- NAV -->
+    <nav id="nav">
+        <a href="#hero" class="logo">
+            <img src="assets/logo.jpg" alt="STEM October Chemistry Logo" class="logoImage" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+            <div>
+                <span class="navbar-name">Oct Chemistry Club</span>
+            </div>
+        </a>
+
+        <div class="navlinks">
+            <a href="#about">About</a>
+            <a href="#tracks">Tracks</a>
+            <a href="#cst">CST 2026</a>
+            <a href="#leadership">Leadership</a>
+            <a href="#apply" class="applyBtn">Apply Now</a>
+        </div>
+        <button id="hamburger" onclick="toggleMenu()">
+            <svg width="22" height="14" viewBox="0 0 22 14" fill="none">
+                <rect width="22" height="1.5" rx="0.75" fill="white"/>
+                <rect y="6.25" width="22" height="1.5" rx="0.75" fill="white"/>
+                <rect y="12.5" width="22" height="1.5" rx="0.75" fill="white"/>
+            </svg>
+        </button>
+    </nav>
+
+    <div class="mobileMenu">
+        <button onclick="toggleMenu()" style="position:absolute; top: 24px; right: 28px; background: none; cursor: pointer; color: rgba(255,255,255,0.5);font-size: 26px;">✕</button>
+        <a href="#about" onclick="toggleMenu()">About</a>
+        <a href="#tracks-section" onclick="toggleMenu()">Tracks</a>
+        <a href="#cst" onclick="toggleMenu()">CST 2026</a>
+        <a href="#leadership" onclick="toggleMenu()">Leadership</a>
+        <a href="#apply" onclick="toggleMenu()">Apply</a>
+    </div>
+
+    <!-- hero section  -->
+    <section id="hero">
+        <div class="orb" style="width: 600px; height: 600px; top: -180px; left: -180px; background: rgba(0,113,227, 0.14);"></div>
+        <div class="orb" style="width: 500px; height: 500px; bottom: -120px; right: -120px; background: rgba(0,194,168,0.12);"></div>
+
+        <div class="container">
+            <div class="hero-content">
+                <div class="heroLeft">
+                    <div class="hero-tag tag reveal">
+                        <span class="dot" style="background: #00C2A8;box-shadow: 0 0 6px rgba(0,194,168,0.8); animation: pulseEffect 1.8s ease-in-out infinite;"></span>
+                        Est. 2022 | October STEM School
+                    </div>
+
+                    <h1 class="heroH1 reveal d1">
+                        <span>Where Science</span>
+                        <span class="GradientTeal">Meets Innovation</span>
+                    </h1>
+
+                    <p class="hero-p reveal d2">
+                        A premier STEM playground for critical thinkers and young researchers. We don't just study chemistry, we reshapre how it is understood, computed, and published.
+                    </p>
+
+                    <div class="heroButtons reveal d3">
+                        <a href="#apply" class="btn-primary">Join the Club <span><i class="fa-solid fa-right-long"></i></span></a>
+                        <a href="#cst" class="btn-secondary">Explore CST 2026 <i class="fa-solid fa-angle-down"></i></a>
+                    </div>
+
+                    <div class="heroStats reveal d4">
+                        <div class="heroStat">
+                            <h1 class="heroStatNumber" id="s-members">0+</h1>
+                            <p class="heroStatLabel">Active Members</p>
+                        </div>
+                        <div class="stat-sep"></div>
+                        <div class="heroStat">
+                            <h1 class="heroStatNumber" id="s-year">0rd</h1>
+                            <p class="heroStatLabel">Year Running</p>
+                        </div>
+                        <div class="stat-sep"></div>
+                        <div class="heroStat">
+                            <h1 class="heroStatNumber" id="s-awards">0+</h1>
+                            <p class="heroStatLabel">Awards Won</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="heroRight reveal d2">
+                    <div class="hero-card-main">
+                        <div class="hc-badge">
+                            <span class="hc-pulse"></span>
+                            Applications Open
+                        </div>
+                        <h1 class="card-title">October Chemistry Club</h1>
+                        <p class="card-sub">Choose your track and join the community</p>
+                        <div class="tracks">
+                            <div class="track">
+                                <div class="track-icon" style="background: rgba(0,194,168,0.12); border: 1px solid rgba(0,194,168,0.18);">🧪</div>
+                                <span class="track-name">AP Chemistry Track</span>
+                                <span class="track-arrow"><i class="fa-solid fa-angle-right"></i></span>
+                            </div>
+                            <div class="track">
+                                <div class="track-icon" style="background: rgba(0,113,227,0.12); border: 1px solid rgba(0,113,227,0.18);">💻</div>
+                                <span class="track-name">Computational Chemistry</span>
+                                <span class="track-arrow"><i class="fa-solid fa-angle-right"></i></span>
+                            </div>
+                            <div class="track">
+                                <div class="track-icon" style="background: rgba(123,95,255,0.12); border: 1px solid rgba(123,95,255,0.18);">📄</div>
+                                <span class="track-name">Magazine &amp; Articles</span>
+                                <span class="track-arrow"><i class="fa-solid fa-angle-right"></i></span>
+                            </div>
+                        </div>
+
+                        <div class="card-divider"></div>
+
+                        <div class="cardFooter">
+                            <div class="cardFooterStat">
+                                <h1 class="cardFooterStat-number gradient-teal">120+</h1>
+                                <p class="cardFooterStat-label">Members</p>
+                            </div>
+                            <div class="cardFooterStat">
+                                <h1 class="cardFooterStat-number gradient-blue">28+</h1>
+                                <p class="cardFooterStat-label">Awards</p>
+                            </div>
+                            <div class="cardFooterStat">
+                                <h1 class="cardFooterStat-number gradient-violet">3rd</h1>
+                                <p class="cardFooterStat-label">Year</p>
+                            </div>
+                            <a href="#apply" class="btn-primary" style="padding: 11px 22px; font-size: 13px;">Apply <i class="fa-solid fa-right-long"></i></a>
+                        </div>
+                    </div>
+                    <div class="heroFloat heroFloat-1 glass">
+                        <span style="font-size: 18px;">🏆</span>
+                        <div>
+                            <div style="font-size: 12px; font-weight: 700; color: #fff;">CST 2026</div>
+                            <div style="font-size: 11px; color: var(--text-trans);">Jul 6 | Registration open</div>
+                        </div>
+                    </div>
+
+                    <div class="heroFloat heroFloat-2 glass">
+                        <div style="font-size: 11px; color: var(--text-trans); margin-bottom: 3px;">Applications</div>
+                        <div style="font-size: 13px; font-weight: 700; color: #00C2A8;">July 1-10</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="sectionDivider"></div>
+
+    <!-- about -->
+    <section id="about">
+        <div class="orb" style="width: 500px; height: 500px; top: -100px; right: -100px; background: rgba(0,113,227,0.1);"></div>
+        <div class="container">
+            <div class="aboutGrid">
+                <div class="aboutText">
+                    <div class="tag reveal">
+                        <span class="dot" style="background: #0071E3;"></span>
+                        About OctChemClub
+                    </div>
+                    <h2 class="reveal d1">What is<br><span class="gradient-teal">October Chemistry Club?</span></h2>
+                    <p class="reveal d2">OctChemistryClub exists to radically transform how young scientists engage with chemistry. We treat the subject not as memorizable facts, but as a living field of fascinating controversy, groundbreaking debate, and revolutionary discovery.</p>
+                    <p class="reveal d3">Through computational modeling, physical experimentation, and academic publishing, our members move beyond textbook contrainsts into real laboratories of scientific thought.</p>
+                    <div class="aboutPills reveal d4">
+                        <span class="pill">Critical Thinking</span>
+                        <span class="pill">Lab Experiments</span>
+                        <span class="pill">Research Publishing</span>
+                        <span class="pill">Competitions</span>
+                        <span class="pill">Peer Review</span>
+                        <span class="pill">Academic Writing</span>
+                    </div>
+                </div>
+
+                <div class="aboutCards">
+                    <div class="card aboutCard reveal">
+                        <div class="aboutCardIcon" style="background: rgba(0,194,168,0.1); border: 1px solid rgba(0, 194, 168,0.18);"><i class="fa-solid fa-microscope"></i></div>
+                        <div>
+                            <h1 class="aboutCardTitle">Research-First Culture</h1>
+                            <p class="aboutCardDesc">Every member is expectted to contribute original thought, whether through lab work, simulation, or written analysis.</p>
+                        </div>
+                    </div>
+                    <div class="card aboutCard reveal d1">
+                        <div class="aboutCardIcon" style="background: rgba(0,113,227,0.1); border: 1px solid rgba(0,113,227,0.18);"><i class="fa-solid fa-book"></i></div>
+                        <div>
+                            <h1 class="aboutCardTitle">Academic Publishing</h1>
+                            <p class="aboutCardDesc">Our magazine track publishes peer-reviewed articles written entirely by students, for students.</p>
+                        </div>
+                    </div>
+                    <div class="card aboutCard reveal d2">
+                        <div class="aboutCardIcon" style="background: rgba(123, 95, 255, 0.1); border: 1px solid rgba(123, 95, 255, 0.18);"><i class="fa-solid fa-award"></i></div>
+                        <div>
+                            <h1 class="aboutCardTitle">Competition Pipeline</h1>
+                            <p class="aboutCardDesc">CST and external competitons give members real pressure environments to sharpen their skills and earn recognition.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- tracks -->
+    <section id="tracks-section">
+        <div class="container">
+            <div class="tracks-header">
+                <div class="tag reveal" style="margin: 0 auto 16px;">
+                    <span class="dot" style="background: #00C2A8;"></span>
+                    Program Tracks
+                </div>
+                <h2 class="reveal d1">Three Paths to <span class="gradient-teal">Scientific Mastery</span></h2>
+                <p class="reveal d2">Choose the track that best fits your passion and need, or pursue multiple.</p>
+            </div>
+            <div class="tracks-grid">
+                <div class="card track-card teal reveal">
+                    <div class="track-icon-wrap" style="background: rgba(0,194,168,0.1); border: 1px solid rgba(0,194,168,0.2);"><i class="fa-solid fa-flask"></i></div>
+                    <h1 class="track-num" style="color: rgba(0,194,168,0.6);">Track 01</h1>
+                    <h3 class="track-title">AP Chemistry</h3>
+                    <p class="track-desc">Dive deep into advanced placement curriculum with experimental rigor. Lab sessions, problem sets, and mentorship from senior members.</p>
+                    <div class="trackTags">
+                        <span class="trackTag" style="background: rgba(0,194,168,0.07); color: rgba(0,194,168,0.6);">Stoichiometry</span>
+                        <span class="trackTag" style="background: rgba(0,194,168,0.07); color: rgba(0,194,168,0.6);">Thermodynamics</span>
+                        <span class="trackTag" style="background: rgba(0,194,168,0.07); color: rgba(0,194,168,0.6);">Lab Work</span>
+                    </div>
+                </div>
+
+                <div class="card track-card blue reveal d1">
+                    <div class="track-icon-wrap" style="background: rgba(0,113,227,0.1); border: 1px solid rgba(0,113,227,0.2);"><i class="fa-solid fa-laptop"></i></div>
+                    <h1 class="track-num" style="color: rgba(0, 194, 168,0.6);">Track 02</h1>
+                    <h3 class="track-title">Computational Chemistry</h3>
+                    <p class="track-desc">Model molecular structures, run simulations, and bridge chemistry with programming. Python, RDKit, and quantum mechanical tools.</p>
+                    <div class="trackTags">
+                        <span class="trackTag" style="background: rgba(0,113,227,0.07); color: rgba(0,113,227,0.6);">Python</span>
+                        <span class="trackTag" style="background: rgba(0,113,227,0.07); color: rgba(0,113,227,0.6);">Molecular Modeling</span>
+                        <span class="trackTag" style="background: rgba(0,113,227,0.07); color: rgba(0,113,227,0.6);">Simulation</span>
+                    </div>
+                </div>
+
+                <div class="card track-card violet reveal d2">
+                    <div class="track-icon-wrap" style="background: rgba(123, 95, 255, 0.1); border: 1px solid rgba(123, 95, 255, 0.2);"><i class="fa-solid fa-file"></i></div>
+                    <h1 class="track-num" style="color: rgba(123, 95, 255, 0.6);">Track 03</h1>
+                    <h3 class="track-title">Magazine &amp; Articles</h3>
+                    <p class="track-desc">Research, write, and publish scientific articles. Full editorial pipeline from pitch to peer review to publication in OCC's journal.</p>
+                    <div class="trackTags">
+                        <span class="trackTag" style="background: rgba(123, 95, 255, 0.7); color: rgba(123, 95, 255, 0.6);">Scientific Writing</span>
+                        <span class="trackTag" style="background: rgba(123, 95, 255, 0.7); color: rgba(123, 95, 255, 0.6);">Peer Review</span>
+                        <span class="trackTag" style="background: rgba(123, 95, 255, 0.7); color: rgba(123, 95, 255, 0.6);">Publishing</span>
+                    </div>
+                </div>
+
+                <div class="card papers-card reveal d3">
+                    <div class="paperContent">
+                        <div>
+                            <div class="tag" style="margin-bottom: 16px;"><i class="fa-solid fa-chart-column"></i>Publication Stats</div>
+                            <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 1.3rem; font-weight: 700; color: #fff; margin-bottom: 8px; letter-spacing: -0.02em;">Research Output<br><span class="gradient-teal">by Category</span></h3>
+                            <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.65;">Our members produce work across all major chemistry disciplines, with organic and physical chemistry leading the field.</p>
+                        </div>
+                        <div>
+                            <div class="paperRow">
+                                <div class="paperText"><span class="paperName">Organic Chemistry</span><span class="paperScore" style="color:#00C2A8">94%</span></div>
+                                <div class="paperBarBG"><div class="paperBar" data-w="94%" style="background:linear-gradient(90deg,#00C2A8,#0071E3)"></div></div>
+                            </div>
+                            <div class="paperRow">
+                                <div class="paperText"><span class="paperName">Physical Chemistry</span><span class="paperScore" style="color:#0071E3">87%</span></div>
+                                <div class="paperBarBG"><div class="paperBar" data-w="87%" style="background:linear-gradient(90deg,#0071E3,#7B5FFF)"></div></div>
+                            </div>
+                            <div class="paperRow">
+                                <div class="paperText"><span class="paperName">Computational Models</span><span class="paperScore" style="color:#00C2A8">78%</span></div>
+                                <div class="paperBarBG"><div class="paperBar" data-w="78%" style="background:linear-gradient(90deg,#7B5FFF,#00C2A8)"></div></div>
+                            </div>
+                            <div class="paperRow">
+                                <div class="paperText"><span class="paperName">Environmental Chemistry</span><span class="paperScore" style="color:#00C2A8">65%</span></div>
+                                <div class="paperBarBG"><div class="paperBar" data-w="65%" style="background:linear-gradient(90deg,#00C2A8,#7B5FFF)"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- CST Competiton  -->
+    
+</body>
+</html>
