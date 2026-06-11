@@ -1,0 +1,120 @@
+#nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 900;
+    padding: 0 32px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background 0.4s, border-color 0.4s;
+    border-bottom: 1px solid transparent;
+}
+
+#nav.solid {
+    background: rgba(0,0,0,0.9);
+    border-bottom-color: var(--border);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.logoImage {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    flex-shrink: 0;
+}
+
+.navbar-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.01em;
+}
+
+.navLinks {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.navLinks a {
+    font-size: 13px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    transition: 0.2s;
+    letter-spacing: 0.01em;
+}
+
+.navLinks a:hover {
+    color: #fff;
+}
+
+.applyBtn {
+    font-size: 13px;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(135deg, #0071E3, #00C2A8);
+    padding: 8px 20px;
+    border-radius: 100px;
+    text-decoration: none;
+    box-shadow: 0 0 20px rgba(0,113,227,0.3);
+    transition: 0.3s;
+}
+
+.applyBtn:hover {
+    box-shadow: 0 0 32px rgba(0, 194, 168, 0.4);
+    transform: scale(1.03);
+}
+
+#hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    padding: 4px;
+}
+
+.mobileMenu {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.97);
+    z-index: 800;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+}
+
+.mobileMenu.open {
+    display: flex;
+}
+
+.mobileMenu a {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.mobileMenu a:hover {
+    color: #00C2A8;
+}
