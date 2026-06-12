@@ -15,12 +15,12 @@ html {
     --surface2: #161620;
     --border: rgba(255,255,255,0.07);
     --border-hover: rgba(255,255,255,0.14);
-    --teal: #00C2A8;
-    --teal-dim: rgba(0, 194, 168, 0.12);
     --blue: #0071E3;
     --blue-dim: rgba(0,113,227,0.12);
-    --violet: #7B5FFF;
-    --violet-dim: rgba(123, 95, 255, 0.12);
+    --teal: #2E9CFF;
+    --teal-dim: rgba(46, 156, 255, 0.12);
+    --violet: #5B8DEF;
+    --violet-dim: rgba(91, 141, 239, 0.12);
     --text: #fff;
     --text-secondary : rgba(255,255,255,0.55);
     --text-trans : rgba(255,255,255, 0.28);
@@ -94,21 +94,21 @@ h1, h2, h3, h4, h5 {
 }
 
 .gradient-teal {
-    background: linear-gradient(135deg, #00C2A8, #0071E3);
+    background: linear-gradient(135deg, #0071E3, #2E9CFF);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .gradient-blue {
-    background: linear-gradient(135deg, #0071E3, #7B5FFF);
+    background: linear-gradient(135deg, #0050A8, #0071E3);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .gradient-violet {
-    background: linear-gradient(135deg, #7B5FFF, #00C2A8);
+    background: linear-gradient(135deg, #0071E3, #5B8DEF);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
