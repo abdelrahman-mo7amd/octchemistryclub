@@ -114,8 +114,11 @@
     border: 1px solid rgba(0, 194, 168, 0.2);
     border-radius: 0.08em;
     text-transform: uppercase;
-    color: rgba(9, 65, 57, 0.9);
+    color: rgba(18, 219, 188, 0.9);
     margin-bottom: 24px;
+    font-size: 13px;
+    padding: 10px 20px;
+    border-radius: 20px;
 }
 
 .hc-pulse {
@@ -251,3 +254,116 @@
 
 
 
+.credit-tab {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 100px;
+    padding: 10px 22px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    cursor: pointer;
+    z-index: 9999;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    max-width: 340px;
+    max-height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.credit-tab:hover {
+    max-width: 420px;
+    max-height: 190px;
+    border-radius: var(--radius-lg);
+    padding: 22px 26px;
+    white-space: normal;
+    border-color: rgba(0,194,168,0.2);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 32px rgba(0,194,168,0.12);
+}
+
+.credit-text {
+    display: block;
+}
+
+.credit-tab:hover .credit-text {
+    display: none;
+}
+
+.credit-expanded {
+    display: none;
+    align-items: flex-start;
+    gap: 16px;
+    width: 100%;
+    opacity: 0;
+    animation: fadeIn 0.4s ease forwards;
+}
+
+.credit-tab:hover .credit-expanded {
+    display: flex;
+}
+
+.credit-photo {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--border-hover);
+    flex-shrink: 0;
+}
+
+.credit-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.credit-info h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text);
+    margin: 0;
+}
+
+.credit-role {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--teal);
+    line-height: 1.5;
+    margin: 0;
+}
+
+.credit-bio {
+    font-size: 12px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin: 0;
+}
+
+.credit-socials {
+    display: flex;
+    gap: 12px;
+    margin-top: 4px;
+}
+
+.credit-socials a {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+.credit-socials a:hover {
+    color: var(--teal);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
