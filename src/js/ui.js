@@ -3,6 +3,7 @@ const scrollToTop = document.getElementById('scrollToTop');
 
 window.addEventListener('scroll', () => {
     nav.classList.toggle('solid', window.scrollY > 50);
+    nav.classList.toggle('shrink', window.scrollY > 100);
     scrollToTop.classList.toggle('show', window.scrollY > 400)
 });
 

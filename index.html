@@ -27,14 +27,14 @@
     <nav id="nav">
         <div class="navLinks-left">
             <a href="#about">About</a>
-            <a href="#tracks">Tracks</a>
+            <a href="#tracks-section">Tracks</a>
             <a href="#testimonials">Testimonials</a>
         </div>
 
         <a href="#hero" class="logo">
             <img src="assets/logo.jpg" alt="STEM October Chemistry Logo" class="logoImage"
                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-            <span class="navbar-name">Oct Chemistry Club</span>
+            <!-- <span class="navbar-name">Oct Chemistry Club</span> -->
         </a>
 
         <div class="navLinks">
@@ -116,17 +116,25 @@
                         <p class="card-sub">Choose your track and join the community</p>
                         <div class="tracks">
                             <div class="track" onclick="openTrackModal('ap')">
-                                <div class="track-icon" style="background: rgba(0,194,168,0.12); border: 1px solid rgba(0,194,168,0.18);">🧪</div>
+                                <div class="track-icon" style="background: rgba(0,194,168,0.12); border: 1px solid rgba(0,194,168,0.18);">
+                                    <i class="fa-solid fa-flask-vial"></i>
+                                </div>
                                 <span class="track-name">AP Chemistry Track</span>
                                 <span class="track-arrow"><i class="fa-solid fa-angle-right"></i></span>
                             </div>
+
                             <div class="track" onclick="openTrackModal('comp')">
-                                <div class="track-icon" style="background: rgba(0,113,227,0.12); border: 1px solid rgba(0,113,227,0.18);">💻</div>
+                                <div class="track-icon" style="background: rgba(0,113,227,0.12); border: 1px solid rgba(0,113,227,0.18);">
+                                    <i class="fa-solid fa-laptop-code"></i>
+                                </div>
                                 <span class="track-name">Computational Chemistry</span>
                                 <span class="track-arrow"><i class="fa-solid fa-angle-right"></i></span>
                             </div>
+
                             <div class="track" onclick="openTrackModal('mag')">
-                                <div class="track-icon" style="background: rgba(123,95,255,0.12); border: 1px solid rgba(123,95,255,0.18);">📄</div>
+                                <div class="track-icon" style="background: rgba(123,95,255,0.12); border: 1px solid rgba(123,95,255,0.18);">
+                                    <i class="fa-solid fa-newspaper"></i>
+                                </div>
                                 <span class="track-name">Magazine &amp; Articles</span>
                                 <span class="track-arrow"><i class="fa-solid fa-angle-right"></i></span>
                             </div>
