@@ -110,17 +110,17 @@
                         <h1 class="card-title">October Chemistry Club</h1>
                         <p class="card-sub">Choose your track and join the community</p>
                         <div class="tracks">
-                            <div class="track">
+                            <div class="track" onclick="openTrackModal('ap')">
                                 <div class="track-icon" style="background: rgba(0,194,168,0.12); border: 1px solid rgba(0,194,168,0.18);">🧪</div>
                                 <span class="track-name">AP Chemistry Track</span>
                                 <span class="track-arrow"><i class="fa-solid fa-angle-right"></i></span>
                             </div>
-                            <div class="track">
+                            <div class="track" onclick="openTrackModal('comp')">
                                 <div class="track-icon" style="background: rgba(0,113,227,0.12); border: 1px solid rgba(0,113,227,0.18);">💻</div>
                                 <span class="track-name">Computational Chemistry</span>
                                 <span class="track-arrow"><i class="fa-solid fa-angle-right"></i></span>
                             </div>
-                            <div class="track">
+                            <div class="track" onclick="openTrackModal('mag')">
                                 <div class="track-icon" style="background: rgba(123,95,255,0.12); border: 1px solid rgba(123,95,255,0.18);">📄</div>
                                 <span class="track-name">Magazine &amp; Articles</span>
                                 <span class="track-arrow"><i class="fa-solid fa-angle-right"></i></span>
@@ -627,7 +627,6 @@
     <section id="testimonials">
         <div class="container">
             <div class="test-header">
-                <div class="tag reveal" style="margin: 0 auto 16px;"><span class="dot" style="background: 7B5FFF;">From the Community</span></div>
                 <h2 class="reveal d1">Voices from <span class="gradient-violet">OctChemClub Members</span></h2>
                 <p class="reveal d2">What our leaders and alumni say about the club experience.</p>
             </div>
@@ -697,9 +696,9 @@
                 <div>
                     <div class="footer-col-title">Tracks</div>
                     <div class="footerLinks">
-                        <span>AP Chemistry</span>
-                        <span>Computational</span>
-                        <span>Magazine &amp; Articles</span>
+                        <a href="javascript:void(0)" onclick="openTrackModal('ap')">AP Chemistry</a>
+                        <a href="javascript:void(0)" onclick="openTrackModal('comp')">Computational</a>
+                        <a href="javascript:void(0)" onclick="openTrackModal('mag')">Magazine &amp; Articles</a>
                     </div>
                 </div>
                 <div>
@@ -741,6 +740,60 @@
             </div>
         </div>
     </div>
+
+    <div class="trackOverlay" id="trackOverlay" onclick="closeTrackModal(event)">
+        <div class="trackModal glass" id="trackModal">
+            <button class="trackModalClose" onclick="closeTrackModal(event)">
+                ✕
+            </button>
+
+            <div class="trackModalContent" data-track="ap">
+                <div class="trackModalIcon" style="background: rgba(0, 194, 168, 0.1); border: 1px solid rgba(0, 194, 168, 0.2); color: #00C2A8;"><i class="fa-solid fa-flask"></i></div>
+                
+                <div class="tag" style="margin-bottom: 15px;"><span class="dot" style="background: #00C2A8;"></span>Track 01</div>
+
+                <h2 class="gradient-teal">AP Chemistry</h2>
+                <p class="trackModelDesc">Dive deep into advanced placement with experimental rigor, hands-on lab sessions, and mentorship from senior members. Build a foundation in stoichiometry, thermodynamics, and reaction kinetics through guided practice and real lab work.</p>
+                <div class="trackModalTags">
+                    <span class="trackTag" style="background: rgba(0, 194, 168, 0.07); color: rgba(0, 194, 168, 0.8);">Stoichiometry</span>
+                    <span class="trackTag" style="background: rgba(0, 194, 168, 0.07); color: rgba(0, 194, 168, 0.8);">Thermodynamics</span>
+                    <span class="trackTag" style="background: rgba(0, 194, 168, 0.07); color: rgba(0, 194, 168, 0.8);">Lab Work</span>
+                    <span class="trackTag" style="background: rgba(0, 194, 168, 0.07); color: rgba(0, 194, 168, 0.8);">Reaction Kinetics</span>
+                </div>
+                <a href="#apply" class="btn-primary" onclick="closeTrackModal(event)">Apply to this track <i class="fa-solid fa-right-long"></i></a>
+            </div>
+
+            <div class="trackModalContent" data-track="comp">
+                <div class="trackModalIcon" style="background: rgba(0, 113,227,0.1); border: 1px solid rgba(0, 113, 227, 0.2); color: #0071E3;"><i class="fa-solid fa-laptop"></i></div>
+                <div class="tag" style="margin-bottom: 15px;"><span class="dot" style="background: #0071E3;"></span>Track 02</div>
+                <h2 class="gradient-blue">Computational Chemistry</h2>
+                <p class="trackModalDesc">Model molecular structure, run simulations, and bridge chemistry with programming. Work with python, RDKit, and quantum mechanical tools to predict molecular behavior and explore computational research methods.</p>
+
+                <div class="trackModalTags">
+                    <span class="trackTag" style="background: rgba(0, 113, 227, 0.07); color: #0071E3;">Python</span>
+                    <span class="trackTag" style="background: rgba(0, 113, 227, 0.07); color: #0071E3;">Molecular Modeling</span>
+                    <span class="trackTag" style="background: rgba(0, 113, 227, 0.07); color: #0071E3;">Simulation</span>
+                    <span class="trackTag" style="background: rgba(0, 113, 227, 0.07); color: #0071E3;">RDKit</span>
+                </div>
+                <a href="#apply" class="btn-primary" onclick="closeTrackModal(event)">Apply to this track <i class="fa-solid fa-right-long"></i></a>
+            </div>
+
+            <div class="trackModalContent" data-track="mag">
+                <div class="trackModalIcon" style="background: rgba(123,95,255,0.1); border: 1px solid rgba(123,95,255,0.2); color: #7B5FFF;"><i class="fa-solid fa-file"></i></div>
+                <div class="tag" style="margin-bottom: 14px;"><span class="dot" style="background:#7B5FFF;"></span>Track 03</div>
+                <h2 class="gradient-violet">Magazine & Articles</h2>
+                <p class="trackModalDesc">Research, write, and publish scientific articles through a full editorial pipeline, from pitch to peer review to publication in OCC's journal. Develop your scientific writing voice while learning the publishing process firsthand.</p>
+                <div class="trackModalTags">
+                    <span class="trackTag" style="background: rgba(123,95,255,0.07); color: rgba(123,95,255,0.8);">Scientific Writing</span>
+                    <span class="trackTag" style="background: rgba(123,95,255,0.07); color: rgba(123,95,255,0.8);">Peer Review</span>
+                    <span class="trackTag" style="background: rgba(123,95,255,0.07); color: rgba(123,95,255,0.8);">Publishing</span>
+                    <span class="trackTag" style="background: rgba(123,95,255,0.07); color: rgba(123,95,255,0.8);">Editorial</span>
+                </div>
+                <a href="#apply" class="btn-primary" onclick="closeTrackModal(event)">Apply to this Track <i class="fa-solid fa-right-long"></i></a>
+            </div>
+        </div>
+    </div>
+
 
     <script src="src/js/firebase.js"></script>
     <script src="src/js/ui.js"></script>
