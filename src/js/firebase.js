@@ -8,7 +8,7 @@ const firebaseConfig = {
     measurementId: 'G-VRG9EMEDCB'
 };
 
-firebaseConfig.initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
 
 const db = firebase.firestore();
 const analytics = firebase.analytics();
@@ -25,7 +25,7 @@ async function saveCSTRegistration(data) {
     return db.collection("cst_registration").add({
         ...data,
         status: 'pending',
-        submittedAt: firebase.firestore.FieldValue.serverTimeStamp()
+        submittedAt: firebase.firestore.FieldValue.serverTimestamp()
     });
 }
 
