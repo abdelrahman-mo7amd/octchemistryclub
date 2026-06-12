@@ -96,7 +96,7 @@ setInterval(tick, 1000);
 
 function switchTab(btn) {
     document.querySelectorAll('.form-tab').forEach(t=> t.classList.remove('active'));
-    document.querySelectorAll('.form-panel').forEach(p => p.style.display = 'none');
+    document.querySelectorAll('.formPanel').forEach(p => p.style.display = 'none');
     btn.classList.add('active');
     const target = btn.dataset.target;
     const panel = document.getElementById(target);
