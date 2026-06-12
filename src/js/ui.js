@@ -104,3 +104,35 @@ function switchTab(btn) {
         panel.style.display = 'block';
     }
 }
+
+function openTrackModal(trackKey) {
+    const overlay = document.getElementById('trackOverlay');
+    const contents = document.querySelectorAll('.trackModalContent');
+
+    contents.forEach(c => c.classList.remove('active'));
+    const target = document.querySelector(`.trackModalContent[data-track="${trackKey}"]`)
+    if (target) {
+        target.classList.add('active');
+    }
+
+    overlay.classList.add('show');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeTrackModal(event) {
+    const overlay = document.getElementById('trackOverlay');
+    const modal = document.getElementById('trackModal');
+
+    if (event.target.id === 'trackOverlay' || event.target.closest('.trackModalClose') || event.target.closest('.btn-primary')) {
+        overlay.classList.remove('show');
+        document.body.style.overflow='';
+    }
+}
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        document.getElementById('trackOverlay').classList.remove('show');
+        document.body.style.overflow ='';
+    }
+});
+
