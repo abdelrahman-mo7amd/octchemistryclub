@@ -566,12 +566,12 @@
     box-shadow: 0 16px 48px rgba(0,0,0,0.5);
 }
 
-.test-quote {
-    font-size: 35px;
+.test-qoute {
+    font-size: 105px;
     line-height: 1;
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 800;
-    margin-bottom: 15px;
+    margin-bottom: -15px;
 }
 
 .test-text {
