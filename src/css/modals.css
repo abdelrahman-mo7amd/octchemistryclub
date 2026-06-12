@@ -1,0 +1,116 @@
+.trackOverlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.35s ease;
+    padding: 25px;
+}
+
+.trackOverlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.trackModal {
+    position: relative;
+    max-width: 560px;
+    width: 100%;
+    border-radius: var(--radius-xl);
+    padding: 40px;
+    transform: translateY(25px) scale(0.93);
+    transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+.trackOverlay.show .trackModal {
+    transform: translateY(0) scale(1);
+}
+
+.trackModalClose {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    font-size: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.25s ease;
+}
+
+.trackModalClose:hover {
+    background: rgba(255,255,255,0.1);
+    color: var(--text);
+    border-color: var(--border-hover);
+}
+
+.trackModalContent {
+    display: none;
+    flex-direction: column;
+}
+
+.trackModalContent.active {
+    display: flex;
+}
+
+.trackModalIcon {
+    width: 55px;
+    height: 55px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.trackModalContent h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    letter-spacing: -0.02em;
+    margin-bottom: 15px;
+}
+
+.trackModalDesc {
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--text-secondary);
+    margin-bottom: 25px;
+}
+
+.trackModalTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 30px;
+}
+
+.trackModalTags .trackTag {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 100px;
+}
+
+.track {
+    cursor: pointer
+}
+
+.footerLinks a {
+    cursor: pointer;
+}
+
