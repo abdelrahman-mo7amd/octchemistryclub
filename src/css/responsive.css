@@ -117,5 +117,60 @@
     .form-tab {
         justify-content: center;
     }
+
+    .credit-tab {
+        bottom: 12px;
+        max-width: 90vw;
+        font-size: 12px;
+        padding: 9px 18px;
+    }
+
+    .credit-tab:hover {
+        max-width: 92vw;
+        max-height: 220px;
+        padding: 18px 20px;
+    }
+
+    .credit-expanded {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .credit-photo {
+        width: 55px;
+        height: 55px;
+    }
+
+    .credit-info {
+        align-items: center;
+    }
+
+    .credit-role, .credit-bio {
+        font-size: 11px;
+    }
+
+    .credit-socials {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
 }
 
+@media (max-width: 380px) {
+    .credit-tab {
+        bottom: 8px;
+        font-size: 11px;
+        padding: 8px 15px;
+    }
+
+    .credit-tab:hover {
+        max-height: 240px;
+        padding: 15px;
+    }
+
+    .credit-photo {
+        width: 50px;
+        height: 50px;
+    }
+}
