@@ -3,7 +3,15 @@ const scrollToTop = document.getElementById('scrollToTop');
 
 window.addEventListener('scroll', () => {
     nav.classList.toggle('solid', window.scrollY > 50);
-    scrollToTop.toggle('show', window.scrollY > 400)
+    scrollToTop.classList.toggle('show', window.scrollY > 400)
+});
+
+
+scrollToTop.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
 });
 
 function toggleMenu() {
