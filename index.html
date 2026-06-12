@@ -31,7 +31,7 @@
             </div>
         </a>
 
-        <div class="navlinks">
+        <div class="navLinks">
             <a href="#about">About</a>
             <a href="#tracks">Tracks</a>
             <a href="#cst">CST 2026</a>
@@ -47,7 +47,7 @@
         </button>
     </nav>
 
-    <div class="mobileMenu">
+    <div class="mobileMenu" id="mobileMenu">
         <button onclick="toggleMenu()" style="position:absolute; top: 24px; right: 28px; background: none; cursor: pointer; color: rgba(255,255,255,0.5);font-size: 26px;">✕</button>
         <a href="#about" onclick="toggleMenu()">About</a>
         <a href="#tracks-section" onclick="toggleMenu()">Tracks</a>
@@ -227,10 +227,10 @@
                 <h2 class="reveal d1">Three Paths to <span class="gradient-teal">Scientific Mastery</span></h2>
                 <p class="reveal d2">Choose the track that best fits your passion and need, or pursue multiple.</p>
             </div>
-            <div class="tracks-grid">
+            <div class="tracksGrid">
                 <div class="card track-card teal reveal">
                     <div class="track-icon-wrap" style="background: rgba(0,194,168,0.1); border: 1px solid rgba(0,194,168,0.2);"><i class="fa-solid fa-flask"></i></div>
-                    <h1 class="track-num" style="color: rgba(0,194,168,0.6);">Track 01</h1>
+                    <h1 class="track-number" style="color: rgba(0,194,168,0.6);">Track 01</h1>
                     <h3 class="track-title">AP Chemistry</h3>
                     <p class="track-desc">Dive deep into advanced placement curriculum with experimental rigor. Lab sessions, problem sets, and mentorship from senior members.</p>
                     <div class="trackTags">
@@ -242,7 +242,7 @@
 
                 <div class="card track-card blue reveal d1">
                     <div class="track-icon-wrap" style="background: rgba(0,113,227,0.1); border: 1px solid rgba(0,113,227,0.2);"><i class="fa-solid fa-laptop"></i></div>
-                    <h1 class="track-num" style="color: rgba(0, 194, 168,0.6);">Track 02</h1>
+                    <h1 class="track-number" style="color: rgba(0, 194, 168,0.6);">Track 02</h1>
                     <h3 class="track-title">Computational Chemistry</h3>
                     <p class="track-desc">Model molecular structures, run simulations, and bridge chemistry with programming. Python, RDKit, and quantum mechanical tools.</p>
                     <div class="trackTags">
@@ -254,7 +254,7 @@
 
                 <div class="card track-card violet reveal d2">
                     <div class="track-icon-wrap" style="background: rgba(123, 95, 255, 0.1); border: 1px solid rgba(123, 95, 255, 0.2);"><i class="fa-solid fa-file"></i></div>
-                    <h1 class="track-num" style="color: rgba(123, 95, 255, 0.6);">Track 03</h1>
+                    <h1 class="track-number" style="color: rgba(123, 95, 255, 0.6);">Track 03</h1>
                     <h3 class="track-title">Magazine &amp; Articles</h3>
                     <p class="track-desc">Research, write, and publish scientific articles. Full editorial pipeline from pitch to peer review to publication in OCC's journal.</p>
                     <div class="trackTags">
@@ -582,13 +582,13 @@
     <section id="leadership">
         <div class="orb" style="width: 450px ; height: 450px; top: -80px; right: -80px;background: rgba(123,95,255,0.1);"></div>
         <div class="container">
-            <div class="leadership-header">
+            <div class="leadershipHeader">
                 <div class="tag reveal" style="margin: 0 auto 16px"><span class="dot" style="background: #7B5FFF;"></span>Executive Board</div>
                 <h2 class="reveal d1">The People behind <span class="gradient-violet">the Science</span></h2>
                 <p class="reveal d2">Our founding leadership team drives the mission, culture, and operatonal excellence of October Chemistry Club.</p>
             </div>
-            <div class="leaders-grid">
-                <div class="leader-card c-blue reveal">
+            <div class="leadersGrid">
+                <div class="leaderCard c-blue reveal">
                     <div class="leader-avatar" style="background: linear-gradient(135deg, rgba(0,113,227,0.3), rgba(0,194,168,0.3)); border: 1px solid rgba(0,113,227,0.25);">ED</div>
                     <h5 class="leader-name">Eyad Desoky</h5>
                     <h6 class="leader-role" style="color: rgba(0,113,227,0.8);">President</h6>
@@ -598,7 +598,7 @@
                         <a href="" class="socialBtn">𝕏</a>
                     </div>
                 </div>
-                <div class="leader-card c-teal reveal d1">
+                <div class="leaderCard c-teal reveal d1">
                     <div class="leader-avatar" style="background: linear-gradient(135deg, rgba(0,194,168,0.3), rgba(123,95,255,0.3));border: 1px solid rgba(0,194,168,0.25);">BL</div>
                     <h5 class="leader-name">Belal Lotfy</h5>
                     <h6 class="leader-role" style="color: rgba(0,194,168,0.8);">CO-Vice President</h6>
@@ -608,7 +608,7 @@
                         <a href="" class="socialBtn">𝕏</a>
                     </div>
                 </div>
-                <div class="leader-card c-violet reveal d2">
+                <div class="leaderCard c-violet reveal d2">
                     <div class="leader-avatar" style="background: linear-gradient(135deg, rgba(123,95,255,0.3), rgba(0,113,227,0.3));border: 1px solid rgba(123, 95, 255, 0.25);">EG</div>
                     <h5 class="leader-name">Ebram Gadelrab</h5>
                     <h6 class="leader-role" style="color: rgba(123, 95, 255,0.8);">CO-Vice President</h6>
@@ -673,8 +673,8 @@
 
     <footer>
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
+            <div class="footerGrid">
+                <div class="footerBrand">
                     <a href="#hero" class="logo">
                         <img src="assets/logo.jpg" alt="STEM October Chemistry Logo" class="logoImage" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
                         <div>
@@ -686,7 +686,7 @@
                 </div>
                 <div>
                     <div class="footer-col-title">Navigate</div>
-                    <div class="footer-links">
+                    <div class="footerLinks">
                         <a href="#about">About OctChemClub</a>
                         <a href="#tracks">Program Tracks</a>
                         <a href="#cst">CST 2026</a>
@@ -696,7 +696,7 @@
                 </div>
                 <div>
                     <div class="footer-col-title">Tracks</div>
-                    <div class="footer-links">
+                    <div class="footerLinks">
                         <span>AP Chemistry</span>
                         <span>Computational</span>
                         <span>Magazine &amp; Articles</span>
@@ -704,14 +704,14 @@
                 </div>
                 <div>
                     <div class="footer-col-title">Contact</div>
-                    <div class="footer-links">
+                    <div class="footerLinks">
                         <span>October STEM School</span>
                         <span>October City, Egypt</span>
                         <a href="mailto:occ@stemoctober.moe.edu.eg" style="color: rgba(0, 194, 168, 0.7);">occ@stemoctober.moe.edu.eg</a>
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom">
+            <div class="footerBottom">
                 <span>© 2026 October Chemistry Club. All rights reserved.</span>
                 <span>Built for the next generation of scientific thinkers.</span>
             </div>
